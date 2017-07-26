@@ -1,11 +1,5 @@
-// Sequelize setup (module 7):
 var Sequelize = require('sequelize');	
-// Above: 'sequelize' grabs node_modules folder > sequelize folder, so that we can 
-// use all the code in that folder.
-
-// Below: sequelize is just a variable that holds our NEW instance of Sequelize.
-var sequelize = new Sequelize('workoutlog', 'postgres', 'Letmein1234!', {
-	host: 'localhost',
+var sequelize = new Sequelize(process.env.DATABASE_URL || 'postgres://postgres: Letmein1234!@localhost:5432/workoutlog', {
 	dialect: 'postgres'
 });
 
@@ -24,4 +18,3 @@ var User = sequelize.import('./models/user');
 
 // Export statement:
 module.exports = sequelize;
-// We've now created our own module & are exporting sequelize.
