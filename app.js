@@ -3,10 +3,7 @@
 // In class, we first wrote this file to go with postgres. Later, we started replacing postgres with mongo; but we didn't finish. So it screwed everything up until Jeremy had me comment out the mongo stuff.
 
 require('dotenv').config();
-
-// Import the express module:
 var express = require('express');
-
 var app = express();
 /* creates an instance of Express that we can use to call the various 
 Express functions that will help us build our server.
